@@ -28,12 +28,36 @@ Para configurar os banco de dados na aplicação, acesse:
 
     src/main/resources/application-test.properties (Configurações para os testes)
 
+### Inicializando a aplicação ###
+
+Acesse a pasta de seu projeto por linha de comando;
+
+Inicie a aplicação com o comando (nesse momento não executa testes):
+
+    mvn spring-boot:run
+
+Após a inicialização do servidor, a aplicação será acessível na URL:
+
+    http://localhost:8080/
+    
+### Testes automatizados ###
+
+Acesse a pasta de seu projeto por linha de comando;
+
+Execute os testes da aplicação com o comando:
+
+    mvn clean test
+
+Será exibido os resultados no console.
+
+
 ### Compilando e iniciando o servidor ###
 
 Acesse a pasta de seu projeto por linha de comando;
-Nesse passo da compilação/geração do projeto já é executado os testes automatizados.
 
-Crie o projeto com o Maven:
+Nesse passo da compilação, os testes automatizados são executados automaticamente.
+
+Compile o projeto com o Maven:
 
     mvn clean install
 
