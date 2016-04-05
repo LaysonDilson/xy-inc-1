@@ -20,8 +20,8 @@
 	    <div layout="row">
 	    	<span flex></span>
 	    	<input type="hidden" ng-model="ctrl.form.id" ng-if="ctrl.form.id">
-    		<md-button class="md-raised" ng-click="ctrl.back()">Voltar</md-button>
-			<md-button class="md-raised md-primary" ng-click="ctrl.save()" style="margin-right:20px;" ng-disabled="editForm.$invalid || ctrl.disableButton">{{ ctrl.isEditionMode() ? 'Atualizar' : 'Salvar' }}</md-button>
+    		<md-button class="md-raised" ng-click="ctrl.back()" tabindex="-1">Voltar</md-button>
+			<md-button class="md-raised md-primary" ng-click="ctrl.save()" ng-disabled="editForm.$invalid || ctrl.disableButton" style="margin-right:0;">{{ ctrl.isEditionMode() ? 'Atualizar' : 'Salvar' }}</md-button>
 		</div>
 	</form>
 </md-content>
