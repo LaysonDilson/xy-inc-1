@@ -1,0 +1,18 @@
+<md-content class="grid-list" ng-show="!ctrl.isLoading">
+	<md-list-item class="md-2-line" ng-repeat="poi in ctrl.pois | orderBy: 'nome'">
+		<md-icon md-svg-src="img/location.svg" class="md-avatar-icon" ng-style="::ctrl.getIconColor(poi.nome)"></md-icon>
+		<div class="md-list-item-text">
+			<h3>{{ poi.nome }}</h3>
+			<p>Localização: {{ poi.x + ', ' + poi.y }}</p>
+			<div class="md-secondary">
+				<md-button ng-click="ctrl.editRow(poi.id)">Editar</md-button>
+				<md-button ng-click="ctrl.deleteRow($event, poi.id)">Apagar</md-button>
+			</div>
+		</div>
+		<md-divider></md-divider>
+	</md-list-item>
+	<p class="no-records" ng-show="ctrl.pois.length == 0">Nenhuma informação encontrada.</p>
+</md-content>
+<div class="grid-loading" ng-if="ctrl.isLoading">
+	<md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>	
+</div>

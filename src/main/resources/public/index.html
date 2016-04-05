@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>XY Inc</title>
+	<link rel="stylesheet" href="css/vendors/angular-material.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+	<style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			display: none !important;
+        }
+    </style>
+</head>
+<body ng-app="xyApp" layout="row" ng-controller="POICtrl as ctrl" ng-cloak>
+	<md-sidenav md-component-id="menu" class="md-sidenav-left md-whiteframe-z2" aria-label="Ponto de Interesse" md-is-locked-open="$mdMedia('gt-sm')">
+	    <md-toolbar class="logo" layout="row">
+	        <h3>
+	        	<md-icon md-svg-src="img/point-favorite.svg"></md-icon>
+	        	Pontos de Interesse
+	        </h3>
+	    </md-toolbar>
+	    <md-list>
+			<md-list-item ng-click="ctrl.showAll()">
+				<md-icon md-svg-src="img/list.svg"></md-icon>
+				<p>Todos</p>
+			</md-list-item>
+			<md-list-item ng-click="ctrl.showAdd()">
+				<md-icon md-svg-src="img/point-add.svg"></md-icon>
+				<p>Adicionar</p>
+			</md-list-item>
+			<md-list-item ng-click="ctrl.showSearch()">
+				<md-icon md-svg-src="img/search.svg"></md-icon>
+				<p>Buscar</p>
+			</md-list-item>
+	    </md-list>
+	</md-sidenav>
+	<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+	    <md-toolbar layout="row" layout-align="start center">
+	        <md-button class="menu" hide-gt-sm ng-click="ctrl.toggleMenu()">
+	            <md-icon md-svg-src="img/menu.svg"></md-icon>
+	        </md-button>
+	        <h3><!-- TESTE --></h3>
+	    </md-toolbar>
+	    <md-content flex id="content">
+	        <div ng-view></div>
+	    </md-content>
+	</div>
+
+	<script src="js/vendors/angular.min.js"></script>
+	<script src="js/vendors/angular-route.min.js"></script>
+	<script src="js/vendors/angular-animate.min.js"></script>
+	<script src="js/vendors/angular-aria.min.js"></script>
+	<script src="js/vendors/angular-messages.min.js"></script>
+	<script src="js/vendors/angular-material.min.js"></script>
+
+	<script src="js/app.min.js"></script>
+</body>
+</html>

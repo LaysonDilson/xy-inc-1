@@ -1,0 +1,37 @@
+<md-dialog class="popup-search" aria-label="Pesquisa de Pontos de Interesse" ng-cloak>
+  <form name="searchForm">
+    <md-toolbar>
+		<div class="md-toolbar-tools">
+        	<h2>Informe sua pesquisa</h2>
+        	<span flex></span>
+			<md-button class="md-icon-button" ng-click="ctrl.cancel()">
+				<md-icon md-svg-src="img/close.svg" aria-label="Fechar popup"></md-icon>
+        	</md-button>
+      	</div>
+    </md-toolbar>
+    <md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-icon-float md-block">
+				<label>Coordenada X</label>
+				<md-icon md-svg-src="img/icon-posx.svg" class="icon"></md-icon>
+				<input ng-model="ctrl.form.x" type="text" ng-required="true" ng-pattern="/^[0-9]+$/">
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+				<label>Coordenada Y</label>
+				<md-icon md-svg-src="img/icon-posy.svg" class="icon"></md-icon>
+				<input ng-model="ctrl.form.y" type="text" ng-required="true" ng-pattern="/^[0-9]+$/">
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+				<label>Distância máxima (metros)</label>
+				<md-icon md-svg-src="img/icon-distance.svg" class="icon"></md-icon>
+				<input ng-model="ctrl.form.dMax" type="text" ng-required="true" ng-pattern="/^[0-9]+$/">
+		    </md-input-container>
+		</div>
+    </md-dialog-content>
+	<md-dialog-actions layout="row">
+    	<md-button class="md-raised" ng-click="ctrl.cancel()">Cancelar</md-button>
+    	<span flex></span>
+		<md-button class="md-raised md-primary" ng-click="ctrl.search()" style="margin-right:20px;" ng-disabled="searchForm.$invalid">Pesquisar</md-button>
+	</md-dialog-actions>
+  </form>
+</md-dialog>
