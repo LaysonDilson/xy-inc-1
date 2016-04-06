@@ -14,7 +14,7 @@ As seguintes dependências são necessárias:
 - [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (versão 8)
 - [Maven](https://maven.apache.org/) (versão 3.3 ou maior)
 - [Node.js](https://nodejs.org/) (versão 4.2.2 ou maior)
-- Instalação Global do [Grunt](http://gruntjs.com/) (versão 1.0.0 ou maior) - execute: `npm install -g grunt-cli`
+- [Grunt](http://gruntjs.com/) - execute: `npm install -g grunt-cli`
 - [MySQL]() - servidor de banco de dados;
 
 
