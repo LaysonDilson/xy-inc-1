@@ -14,7 +14,7 @@ As seguintes dependências são necessárias:
 - [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (versão 8)
 - [Maven](https://maven.apache.org/) (versão 3.3 ou maior)
 - [Node.js](https://nodejs.org/) (versão 4.2.2 ou maior)
-- Instalação Global do [Grunt](http://gruntjs.com/) (versão 1.0.0 ou maior) - execute: `npm install -g grunt-cli`
+- [Grunt](http://gruntjs.com/) - execute: `npm install -g grunt-cli`
 - [MySQL]() - servidor de banco de dados;
 
 
@@ -94,11 +94,11 @@ A API REST do servidor expõe o seguinte serviço:
 
 ##### Pontos de Interesse #####
 
-Url           |Verb          | Description
---------------|------------- | -------------
-/ws/poi       |GET          | lista todos os pontos de interesse cadastrado na aplicação.
-/ws/poi|POST| cria um novo ponto de interesse.
-/ws/poi| PUT| atualiza um ponto de interesse caso exista.
-/ws/poi/{id}|GET| retorna um ponto de interesse apartir do identificador único (`id`).
-/ws/poi/{id}|DELETE| apaga um ponto de interesse apartir do identificador único (`id`).
-/ws/poi/search|GET| busca pontos de interesse baseado em uma localização `x`, `y` e uma distância máxima (`dMax`).
+Url           |Verb          |Request Body  | Description
+--------------|------------- |------------- | -------------
+/ws/poi       |GET          |void|lista todos os pontos de interesse cadastrado na aplicação.
+/ws/poi|POST|JSON| cria um novo ponto de interesse.
+/ws/poi| PUT|JSON| atualiza um ponto de interesse caso exista.
+/ws/poi/{id}|GET|void| retorna um ponto de interesse apartir do identificador único (`id`).
+/ws/poi/{id}|DELETE|void| apaga um ponto de interesse apartir do identificador único (`id`).
+/ws/poi/search?x={x}&y={y}&dMax={dMax}|GET|void| busca pontos de interesse baseado em uma localização `x`, `y` e uma distância máxima (`dMax`).
