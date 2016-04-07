@@ -35,11 +35,11 @@ public class PontoInteresseController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> add(@RequestBody PontoInteresse poi, UriComponentsBuilder ucBuilder) {
-		if (!isValid(poi)) {
+		poi = service.save(poi);
+		
+		if (poi == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		
-		poi = service.save(poi);
 
 		HttpHeaders headers = new HttpHeaders();
 
@@ -50,11 +50,11 @@ public class PontoInteresseController {
 	
 	@RequestMapping(method = RequestMethod.PUT)
 	public ResponseEntity<Void> edit(@RequestBody PontoInteresse poi) {
-		if (!isValid(poi)) {
-			return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+		poi = service.save(poi);
+		
+		if (poi == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-
-		service.save(poi);
 
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
@@ -90,23 +90,4 @@ public class PontoInteresseController {
 
 		return poi;
 	}
-	
-	private boolean isValid(PontoInteresse poi) {
-		if ((poi.getX() != null && poi.getX() < 0) || (poi.getY() != null && poi.getY() < 0)) {
-			return false;
-		}
-		
-		return true;
-	}
-	
-//	private void parseNegativeValues(PontoInteresse poi) {
-//		if (poi.getX() < 0) {
-//			poi.setX(poi.getX() * -1);
-//		}
-//		
-//		if (poi.getY() < 0) {
-//			poi.setY(poi.getY() * -1);
-//		}
-//	}
-
 }
