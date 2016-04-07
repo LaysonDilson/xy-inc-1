@@ -101,4 +101,4 @@ Url           |Verb          | Description
 /ws/poi| PUT| atualiza um ponto de interesse caso exista.
 /ws/poi/{id}|GET| retorna um ponto de interesse apartir do identificador único (`id`).
 /ws/poi/{id}|DELETE| apaga um ponto de interesse apartir do identificador único (`id`).
-/ws/poi/search|GET| busca pontos de interesse baseado em uma localização `x`, `y` e uma distância máxima (`dMax`).
+/ws/poi/search?x={x}&y={y}&dMax={dMax}|GET| busca pontos de interesse baseado em uma localização `x`, `y` e uma distância máxima (`dMax`).
