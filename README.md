@@ -28,9 +28,14 @@ Para configurar os banco de dados na aplicação, acesse:
 
     src/main/resources/application-test.properties (Configurações para os testes)
 
+### Instalando a aplicação ###
+Execute o comando para clonar (copiar) o projeto:
+
+    git clone https://github.com/marlonmleite/xy-inc.git
+    
 ### Inicializando a aplicação ###
 
-Acesse a pasta de seu projeto por linha de comando;
+Acesse a pasta do projeto copiado por linha de comando;
 
 Inicie a aplicação com o comando (nesse momento não executa testes):
 
